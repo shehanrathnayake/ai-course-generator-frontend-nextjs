@@ -8,7 +8,7 @@ export default function PingClient() {
   useEffect(() => {
     const fetchPing = async () => {
       try {
-        const res = await fetch("http://localhost:8000/ping");
+        const res = await fetch("http://localhost:8000/api/v1/ping");
         const data = await res.json();
         setMessage(data.message);
       } catch (error) {
@@ -21,7 +21,7 @@ export default function PingClient() {
   }, []);
 
   return (
-    <div className="p-4 border rounded-md">
+    <div className="p-4 border rounded-md" data-testid="ping-display">
       <p>Backend says: <strong>{message}</strong></p>
     </div>
   );
