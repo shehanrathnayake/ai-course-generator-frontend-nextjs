@@ -13,6 +13,7 @@ export default function CoursePage() {
   }, []);
 
   if (!data) return <div className="p-6">Loading course...</div>;
+  console.log(data)
 
   const currentModule = data.modules[currentIndex];
 

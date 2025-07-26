@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
@@ -8,7 +8,8 @@ export async function POST(req: NextRequest) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       topic: body.topic,
-      format: 'json'
+      complexity: body.complexity,
+      current_year: body.currentYear
     })
   });
 
